@@ -1,8 +1,10 @@
 const express = require('express'), mongoose = require('mongoose'),
+cors = require('cors'),
 morgan = require('morgan'), bodyParser = require('body-parser'),
 config = require('./config/config'), app = express(),
 auth = require('./routes/auth');
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 

@@ -8,5 +8,5 @@ module.exports = async (req, res) => {
         .then((user) => {
             res.send(user);
         })
-        .catch(err => console.log(err));
+        .catch(err => res.status(401).send(err.errmsg));
 }
